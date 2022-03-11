@@ -1,13 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import Home from './pages/Home';
 
 function App() {
   return (
     <div className="App">
-
-      <h1> Hello</h1>
+      <h1>To Do List React</h1>
+ <Home/>
     </div>
   );
 }
 
 export default App;
+
+
+
+
+
+  
