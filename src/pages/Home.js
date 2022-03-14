@@ -1,16 +1,15 @@
 const Home = () => {
 
-const numbers = [1, 2, 3, 4, 5];
-const listItems = numbers.map((number) => <li>{number}</li>);
-const posts = [
-  {id: 1, title: 'Bonjour, monde', content: 'Bienvenue sur la doc de React !'},
-  {id: 2, title: 'Installation', content: 'Vous pouvez installer React depuis npm.'}
+const ToDoList = [
+  {id: 1, toDoItem: 'Bonjour, monde'},
+  {id: 2, toDoItem: 'Hello word'}
 ];
+const listItems = ToDoList.map((toDoItem) => <li>{toDoItem}</li>);
 
     return (
       <div className="Home">
         <h2> A faire</h2>
-        <ul>{listItems}</ul>,
+       <ul>{listItems}</ul>
       </div>
     );
 
