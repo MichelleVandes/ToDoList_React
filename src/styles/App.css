@@ -1,0 +1,15 @@
+.App {
+  margin-left: 50px;
+  margin-top: 15px;
+}
+
+.App-form {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.App-li {
+  margin-left: 765px;
+  margin-top: 15px;
+}

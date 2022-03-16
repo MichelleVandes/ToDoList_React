@@ -1,47 +1,67 @@
-import "./App.css";
-
-function App() {
-  const title = "To Do List React";
+import "../styles/App.css";
+import { useState } from "react";
 
   let toDoList = [
-    { id: 1, toDoItem: "Bonjour monde" },
-    { id: 2, toDoItem: "Hello word" }
+    { id: 1, toDoItem: "Bonjour monde", toDoIt: true },
+    { id: 2, toDoItem: "Hello word", toDoIt: false },
   ];
+ 
+function App() {
+  
 
-  function AddEntry() {
-    alert("this.toDoList");
-    var aa = toDoList.length + 1;
-    const bb = { id: aa, toDoItem: "ma nouvelle tache" };
-    toDoList.push(bb);
-    alert(toDoList);
-  }
-
-  const listUl = toDoList.map((Item) => (
-    <li>
-      {Item.toDoItem} <button>X</button>
+  let listUl = toDoList.map((Item) => (
+    <li key={Item.id} className="App-li">
+      {Item.toDoItem} 
+      <button onClick={() => deleteEntry(Item.id)} >
+        X
+      </button>
     </li>
   ));
 
-  function Welcome(props) {
-    return <h3>Bonjour, {props.name}</h3>;
-  }
-  const element = <Welcome name="Moi" />;
+const addEntry = (e) => {
+  e.preventDefault();
+  console.log(e.target["my_input"].value);
+  var aa = toDoList.length + 1;
+  const bb = { id: aa, toDoItem: e.target["my_input"].value, toDoIt: true };
+  toDoList.push(bb);
+  console.log(toDoList.values);
+};
 
+
+function QuestionForm() {
+  const [inputValue, setInputValue] = useState("Ajouter votre tâche ici");
+  // const isInputErrorNull = inputValue.includes("");
   return (
     <div>
-      <h1>{title}</h1>
-  
-      {element}
-      <form>
+      <textarea
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
+      />
+      <button onClick={() => alert(inputValue)}>Help</button>
+      {/* {isInputErrorNull && (
+        <div>🔥 Veuillez saisir votre texte.</div>
+      )} */}
+    </div>
+  );
+}
+
+
+
+
+function deleteEntry(id) {
+  alert("Delete Entry", id);
+}
+  return (
+    <div>
+      <QuestionForm/>
+      <form onSubmit={addEntry} className="App-form">
         <input
           type="text"
-          id="toDoAdd"
+          name="my_input"
           placeholder="Nouvelle tache"
           size="30"
         />
-        <button id="toDoAdd" onClick={AddEntry}>
-          Comfirmer
-        </button>
+        <button type="submit">Ajouter</button>
       </form>
 
       <ul>{listUl}</ul>
