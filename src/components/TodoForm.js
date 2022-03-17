@@ -1,40 +1,35 @@
-import { useState } from "react"
+import { useState } from "react";
 
-const TodoForm = (props) => {
+function TodoForm(props) {
 const [newTodo, setNewTodo] = useState("");
 
 const handleChange = (event) => {
-   // setNewTodo({event.currentTarget.value})
-}
-
+  //setNewTodo({event.currentTarget.value})
+};
 const handleSubmit = (event) => {
-    event.preventDefault()
-}
-const id = new Date().getTime();
-const todo = newTodo;
-props.onTodoAdd({id, todo})
-setNewTodo("")
+  event.preventDefault()
+  const id = new Date().getTime();
+  const todo = newTodo;
+  props.onTodoAdd({ id, todo });
+  setNewTodo("");
+};
 
-return (
+
+  return (
     <div>
-
-      <form onSubmit={handleSubmit}
-      className="App-form">
+      <form onSubmit={handleSubmit} className="App-form">
         <input
-        value={newTodo}
-        onChange={handleChange}
+          value={newTodo}
+          onChange={handleChange}
           type="text"
           name="my_input"
           placeholder="Nouvelle tâche"
           size="30"
         />
-        <button > Ajouter
-        </button>
+        <button> Ajouter</button>
       </form>
-
-     
     </div>
   );
-
 }
+
 export default TodoForm;
