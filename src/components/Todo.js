@@ -1,11 +1,16 @@
 import React from "react";
-import trash from "../images/" 
+import "../styles/Todo.css"
+import trash from "../images/trash-outline.svg" 
 
 
 const Todo = ({ details, onDelete }) => (
-  <li>
-    {details.tache} <button onClick={() => onDelete(details.id)}>X</button>
-    <img src="trash" alt="poubelle" />
+  <li
+  className="todo-li">
+    {details.tache}{" "}
+    <button onClick={() => onDelete(details.id)}
+    className="todo-btn">
+      <img src="trash" alt="poubelle" height="80" width="100" />
+    </button>
   </li>
 );
 export default Todo;

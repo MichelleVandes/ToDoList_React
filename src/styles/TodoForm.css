@@ -1,0 +1,38 @@
+
+
+.form {
+    padding-top: 2rem;
+    margin: 0rem 25rem 0rem 25rem;
+    padding-bottom: 2rem;
+    border: solid;
+    display: block;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+.add-txt {
+  padding: 5px;
+  width: 30rem;
+  text-align: auto;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  
+}
+
+.add-btn {
+  padding: 5px;
+  width: auto;
+  background: #FCD7B2;
+  color: #555;
+  margin-left: 1rem;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.add-btn:hover {
+  background-color: #bbb;
+}

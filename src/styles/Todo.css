@@ -1,0 +1,9 @@
+.todo-btn {
+  
+}
+
+.todo-li {
+    display: flex;
+    justify-content: space-between;
+
+}

@@ -49,14 +49,17 @@ function App() {
   };
 
   return (
-    <div>
-      <h2>{title}</h2>
-      <TodoForm addNewTache={handleAdd} />
-      <ul>
-        {todo.map((todo) => (
-          <Todo details={todo} onDelete={handleDelete} />
-        ))}
-      </ul>
+    <div className="container">
+      <h2 className="app-h2">{title}</h2>
+      <div>
+        <TodoForm addNewTache={handleAdd} />
+        <ul
+        className="app-ul">
+          {todo.map((todo) => (
+            <Todo details={todo} onDelete={handleDelete} />
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }

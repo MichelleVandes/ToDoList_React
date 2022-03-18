@@ -3,12 +3,15 @@
   margin-top: 15px;
 }
 
-.App-form {
-  display: flex;
-  justify-content: center;
-  margin-top: 15px;
+.app-ul {
+    margin: 2rem 25rem 0rem 25rem;
+    padding-bottom: 2rem;
+    border: solid #FCD7B2;
 }
 
+.app-h2 {
+
+}
 .App-li {
   margin-left: 765px;
   margin-top: 15px;
