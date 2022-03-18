@@ -5,9 +5,8 @@ function Title() {
 
 
 
-  function Welcome(props) {
-    return <h3>Bonjour, {props.name}</h3>;
-  }
+  const Welcome = (props) => <h3>Bonjour, {props.name}</h3>;
+  
   const element = <Welcome name="Michelle" />;
 
   return (

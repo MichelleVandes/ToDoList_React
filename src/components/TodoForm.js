@@ -4,13 +4,13 @@ const TodoForm = (props) => {
   const [newTache, setnewTache] = useState("");
 
   const handleChange = (event) => {
-    console.log("target", event.currentTarget.value);
+    //console.log("target", event.currentTarget.value);
     setnewTache(event.currentTarget.value);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("newTache", newTache);
+    // console.log("newTache", newTache);
 
     const id = new Date().getTime();
     const tache = newTache;
@@ -32,7 +32,6 @@ const TodoForm = (props) => {
         />
         <button>Confirmer</button>
       </form>
-      <input type="text" />
     </div>
   );
 };

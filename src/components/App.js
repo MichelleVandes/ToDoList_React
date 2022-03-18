@@ -4,30 +4,49 @@ import Todo from "./Todo";
 import TodoForm from "./TodoForm";
 
 function App() {
-  const [todo, setTodo] = useState([
-    { id: 1, tache: "Bonjour monde" },
-    { id: 2, tache: "Hello word" },
-  ]);
+  //  const initTodo = [
+  //    { id: 1, tache: "Bonjour monde" },
+  //    { id: 2, tache: "Hello word" },
+  //  ];
+   let initTodo = [];
+  
+   if (localStorage.getItem("myTodolist") && 
+   Array.isArray(JSON.parse(localStorage.getItem("myTodolist")))) {
+     initTodo = JSON.parse(localStorage.getItem("myTodolist")) ;
+    //  console.log("j'utilise le localStorage")
+   }
 
+  const [todo, setTodo] = useState(initTodo);
+
+  const title = "Liste des tâches à faire";
+
+  // -> Suppression tache :
   const handleDelete = (id) => {
     const majTodo = [...todo];
     const index = majTodo.findIndex((todo) => todo.id === id);
 
     majTodo.splice(index, 1);
-
     setTodo(majTodo);
+    localSave(majTodo);
   };
 
+  // -> Ajout tache :
   const handleAdd = (newTodo) => {
-    console.log("newTodo", newTodo);
+    // console.log("newTodo", newTodo);
     const majTodo = [...todo];
     majTodo.push(newTodo);
+
     console.log("majTodo", majTodo);
 
     setTodo(majTodo);
+    localSave(majTodo);
   };
 
-  const title = "Liste des tâches à faire";
+
+  const localSave = (majTodo) => {
+    localStorage.removeItem("myTodolist");
+    localStorage.setItem("myTodolist", JSON.stringify(majTodo));
+  };
 
   return (
     <div>
@@ -35,7 +54,7 @@ function App() {
       <TodoForm addNewTache={handleAdd} />
       <ul>
         {todo.map((todo) => (
-          <Todo key={todo.id} details={todo} onDelete={handleDelete} />
+          <Todo details={todo} onDelete={handleDelete} />
         ))}
       </ul>
     </div>
