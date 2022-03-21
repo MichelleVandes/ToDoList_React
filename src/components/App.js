@@ -38,14 +38,12 @@ function App() {
     const majTodo = [...todo];
     majTodo.push(newTodo);
 
-    console.log("majTodo", majTodo);
 
     setTodo(majTodo);
     localSave(majTodo);
   };
   // -> Tagger comme réalisé :
   const handleThrough = (id) => {
-    console.log("hello");
    const majTodo = [...todo];
    const index = majTodo.findIndex((todo) => todo.id === id);
     if (majTodo[index].realise) {
@@ -53,7 +51,6 @@ function App() {
     } else {
       majTodo[index].realise = true;
     }
-     console.log("majTodo", majTodo);
        setTodo(majTodo);
        localSave(majTodo);
   };

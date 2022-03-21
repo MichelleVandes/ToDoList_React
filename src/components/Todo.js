@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/Todo.css";
-import trash from "../images/trash-outline.svg";
-import close from "../images/close.svg"
+import trash from "../images/trash-outline.svg"
+import close from "../images/close.svg";
 
 function Todo({ id, details, onThrough, onDelete }) {
   let myClass = "todo-li";
