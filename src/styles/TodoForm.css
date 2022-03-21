@@ -1,5 +1,3 @@
-
-
 .form {
     padding-top: 2rem;
     margin: 0rem 25rem 0rem 25rem;
@@ -35,4 +33,113 @@
 
 .add-btn:hover {
   background-color: #bbb;
+}
+
+
+@media screen and (max-width: 1440px) {
+  .form {
+    padding-top: 2rem;
+    margin: 0rem 12rem 0rem 12rem;
+    padding-bottom: 1rem;
+    border: solid;
+    display: block;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+.add-txt {
+  padding: 5px;
+  width: 50rem;
+  text-align: auto;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  
+}
+
+}
+
+@media screen and (max-width: 1280px) {
+  .form {
+    padding-top: 2rem;
+    margin: 0rem 1rem 0rem 1rem;
+    padding-bottom: 1rem;
+    border: solid;
+    display: block;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+.add-txt {
+  padding: 5px;
+  width: 50rem;
+  text-align: auto;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  
+}
+
+}
+
+@media screen and (max-width: 1024px) {
+
+.add-txt {
+  padding: 5px;
+  width: 50rem;
+  text-align: auto;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  
+}
+
+}
+@media screen and (max-width: 768px) {
+.add-txt {
+  padding: 5px;
+  width: 36rem;
+  text-align: auto;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  
+}
+
+.add-btn {
+  padding: 1px;
+  width: auto;
+  background: #FCD7B2;
+  color: #555;
+  margin-left: 1rem;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+}
+@media screen and (max-width: 425px) {
+.add-txt {
+  padding: 5px;
+  width: auto;
+  text-align: auto;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  
+}
+
+.add-btn {
+  padding: 1px;
+  width: auto;
+  background: #FCD7B2;
+  color: #555;
+  margin-left: 1rem;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
 }

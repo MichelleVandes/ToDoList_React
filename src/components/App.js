@@ -8,13 +8,15 @@ function App() {
   //    { id: 1, tache: "Bonjour monde" },
   //    { id: 2, tache: "Hello word" },
   //  ];
-   let initTodo = [];
-  
-   if (localStorage.getItem("myTodolist") && 
-   Array.isArray(JSON.parse(localStorage.getItem("myTodolist")))) {
-     initTodo = JSON.parse(localStorage.getItem("myTodolist")) ;
+  let initTodo = [];
+
+  if (
+    localStorage.getItem("myTodolist") &&
+    Array.isArray(JSON.parse(localStorage.getItem("myTodolist")))
+  ) {
+    initTodo = JSON.parse(localStorage.getItem("myTodolist"));
     //  console.log("j'utilise le localStorage")
-   }
+  }
 
   const [todo, setTodo] = useState(initTodo);
 
@@ -41,7 +43,20 @@ function App() {
     setTodo(majTodo);
     localSave(majTodo);
   };
-
+  // -> Tagger comme réalisé :
+  const handleThrough = (id) => {
+    console.log("hello");
+   const majTodo = [...todo];
+   const index = majTodo.findIndex((todo) => todo.id === id);
+    if (majTodo[index].realise) {
+      majTodo[index].realise = false;
+    } else {
+      majTodo[index].realise = true;
+    }
+     console.log("majTodo", majTodo);
+       setTodo(majTodo);
+       localSave(majTodo);
+  };
 
   const localSave = (majTodo) => {
     localStorage.removeItem("myTodolist");
@@ -56,7 +71,11 @@ function App() {
         <div className="app-div-ul">
           <ul className="app-ul">
             {todo.map((todo) => (
-              <Todo details={todo} onDelete={handleDelete} />
+              <Todo 
+              key={todo.id} 
+              details={todo} 
+              onThrough={handleThrough}
+              onDelete={handleDelete} />
             ))}
           </ul>
         </div>

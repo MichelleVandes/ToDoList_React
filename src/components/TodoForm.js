@@ -1,11 +1,10 @@
 import { useState } from "react";
-import '../styles/TodoForm.css'
+import "../styles/TodoForm.css";
 
 const TodoForm = (props) => {
   const [newTache, setnewTache] = useState("");
 
   const handleChange = (event) => {
-    //console.log("target", event.currentTarget.value);
     setnewTache(event.currentTarget.value);
   };
 
@@ -15,26 +14,23 @@ const TodoForm = (props) => {
 
     const id = new Date().getTime();
     const tache = newTache;
-
-    props.addNewTache({ id, tache });
+    const realise = false;
+    props.addNewTache({ id, tache,realise });
 
     setnewTache("");
-    
   };
 
   return (
     <div>
-      <form onSubmit={handleSubmit}
-      className="form">
+      <form onSubmit={handleSubmit} className="form">
         <input
-        className="add-txt"
+          className="add-txt"
           value={newTache}
           onChange={handleChange}
           type="text"
           placeholder="Ajouter une tâche"
         />
-        <button
-        className="add-btn">Confirmer</button>
+        <button className="add-btn">Confirmer</button>
       </form>
     </div>
   );

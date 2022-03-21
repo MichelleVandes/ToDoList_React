@@ -1,9 +1,20 @@
-.todo-btn {
-  
-}
+
 
 .todo-li {
-    display: flex;
-    justify-content: space-between;
+   display: flex;
+   justify-content: space-between;
+    font-size: 16px;
 
+}
+
+.todo-li-realise {
+    text-decoration: line-through;
+    color: crimson;
+    display: flex;
+   justify-content: space-between;
+    font-size: 16px;
+}
+.todo-btn {
+display: flex;
+justify-content: end;
 }
