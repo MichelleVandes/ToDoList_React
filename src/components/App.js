@@ -53,12 +53,13 @@ function App() {
       <h2 className="app-h2">{title}</h2>
       <div>
         <TodoForm addNewTache={handleAdd} />
-        <ul
-        className="app-ul">
-          {todo.map((todo) => (
-            <Todo details={todo} onDelete={handleDelete} />
-          ))}
-        </ul>
+        <div className="app-div-ul">
+          <ul className="app-ul">
+            {todo.map((todo) => (
+              <Todo details={todo} onDelete={handleDelete} />
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );

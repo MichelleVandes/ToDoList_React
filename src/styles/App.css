@@ -1,18 +1,20 @@
-.App {
-  margin-left: 50px;
-  margin-top: 15px;
-}
 
 .app-ul {
-    margin: 2rem 25rem 0rem 25rem;
+    padding: 2rem 6rem 0rem 6rem;
     padding-bottom: 2rem;
-    border: solid #FCD7B2;
+     border: solid #FCD7B2;
+     
+}
+.app-div-ul {
+   padding: 2rem 25rem 0rem 25rem;
+   
 }
 
 .app-h2 {
-
+padding-left: 25rem;
 }
 .App-li {
   margin-left: 765px;
   margin-top: 15px;
+ 
 }

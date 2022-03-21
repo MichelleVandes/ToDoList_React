@@ -5,15 +5,14 @@ function Title() {
 
 
 
-  const Welcome = (props) => <h3>Bonjour, {props.name}</h3>;
-  
-  const element = <Welcome name="Michelle" />;
+  // const Welcome = (props) => <h3>Bonjour, {props.name}</h3>;
+  // const element = <Welcome name="Michelle" />;
 
   return (
     <div className="title">
       <h1>{title}</h1>
 
-      {element}
+      {/* {element} */}
 
     </div>
   );

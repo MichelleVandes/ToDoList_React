@@ -9,7 +9,7 @@ const Todo = ({ details, onDelete }) => (
     {details.tache}{" "}
     <button onClick={() => onDelete(details.id)}
     className="todo-btn">
-      <img src="trash" alt="poubelle" height="80" width="100" />
+      <img src={trash} alt="poubelle" height="20" width="20" />
     </button>
   </li>
 );
