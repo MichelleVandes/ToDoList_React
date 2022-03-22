@@ -43,16 +43,20 @@ function App() {
     localSave(majTodo);
   };
   // -> Tagger comme réalisé :
-  const handleThrough = (id) => {
-   const majTodo = [...todo];
-   const index = majTodo.findIndex((todo) => todo.id === id);
-    if (majTodo[index].realise) {
-      majTodo[index].realise = false;
-    } else {
-      majTodo[index].realise = true;
-    }
-       setTodo(majTodo);
-       localSave(majTodo);
+  const handleCheck = (id) => {
+    const majTodo = [...todo];
+    const index = majTodo.findIndex((todo) => todo.id === id);
+    // if (majTodo[index].realise) {
+    //   majTodo[index].realise = false;
+    // } else {
+    //   majTodo[index].realise = true;
+    // }
+    majTodo[index].realise
+      ? (majTodo[index].realise = false)
+      : (majTodo[index].realise = true);
+      
+    setTodo(majTodo);
+    localSave(majTodo);
   };
 
   const localSave = (majTodo) => {
@@ -68,11 +72,12 @@ function App() {
         <div className="app-div-ul">
           <ul className="app-ul">
             {todo.map((todo) => (
-              <Todo 
-              key={todo.id} 
-              details={todo} 
-              onThrough={handleThrough}
-              onDelete={handleDelete} />
+              <Todo
+                key={todo.id}
+                details={todo}
+                onCheck={handleCheck}
+                onDelete={handleDelete}
+              />
             ))}
           </ul>
         </div>
